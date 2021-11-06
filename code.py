@@ -31,7 +31,7 @@ sensor = adafruit_sht31d.SHT31D(i2c)
 # Influx location and database
 POST_URL = "http://192.168.9.15:8086/write?db=TempHumid"
 
-# Humidity Colors
+# Humidity Colors, do the same for temp
 humidColor1 = 0x3d5aff
 humidColor2 = 0x82B673
 humidColor3 = 0xF5ED73
@@ -59,7 +59,6 @@ def sliderBar(percentage):
         print("0")
     return 
 
-# GUI
 def humidColor(humidity):
     if humidity >= 60:
         colorhumidity = humidColor1
@@ -95,6 +94,7 @@ def tempColor(temp):
         colortemp = 333
     return colortemp
     
+# GUI
 DISPLAY_WIDTH = 240
 DISPLAY_HEIGHT = 240
 
@@ -197,10 +197,7 @@ print("ESP32-S2 WebClient Test")
 print("My MAC addr:", [hex(i) for i in wifi.radio.mac_address])
 print("Available WiFi networks:")
 for network in wifi.radio.start_scanning_networks():
-    print(
-        "\t%s\t\tRSSI: %d\tChannel: %d"
-        % (str(network.ssid, "utf-8"), network.rssi, network.channel)
-    )
+    print("\t%s\t\tRSSI: %d\tChannel: %d" % (str(network.ssid, "utf-8"), network.rssi, network.channel)
 wifi.radio.stop_scanning_networks()
 
 print("Connecting to %s" % secrets["ssid"])
@@ -312,7 +309,7 @@ while True:
             print("1. Down Pressed")
             time.sleep(1.05)
 
-# wtf is wrong here with this board
+# Wtf is wrong here with this board
 #     if button_up_touched.value:
 #         time.sleep(0.05)
 #         if button_up_touched.value:
@@ -489,7 +486,5 @@ while True:
             print("++++++++++++++++++++++++++++++++++++")
             print("++++++++++++++++++++++++++++++++++++")
 
-    # time.sleep(.09)
-    # logData()
     time.sleep(.6)
-    # time.sleep(60)
+
