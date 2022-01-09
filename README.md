@@ -7,5 +7,7 @@ outdoor temp/humidity(sht31d/funhouse) InfluxDB logger
 - Capacitive touch slide on side adjusts screen brightness with visual indicator
 - Text changes color based on temperature/humidity (e.g. cold = blue, etc)
 
-![Funhouse demo](https://github.com/cr0m/funhouse_sht31d/blob/main/funhousedemo.jpg)
+![Funhouse demo](https://github.com/cr0m/funhouse_sht31d/blob/main/imgs/funhousedemo.jpg)
+
+![Funhouse InfluxDB demo](https://github.com/cr0m/funhouse_sht31d/blob/main/imgs/funhouseinflux.png)
 
